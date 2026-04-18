@@ -1,6 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QFile>
+#include <QTextStream>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -17,7 +20,11 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow() override;
 
+private slots:
+    void on_actionLoad_game_triggered();
+
 private:
     Ui::MainWindow *ui;
+    QString currentFile;
 };
 #endif // MAINWINDOW_H
